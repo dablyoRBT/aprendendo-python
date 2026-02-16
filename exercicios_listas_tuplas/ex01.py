@@ -1,22 +1,7 @@
-despensa = ["Açucar", "Arroz", "Feijão", "Carne"]
-carrinho = []
+dados = input("Digite os dados do aluno no formato Nome, Idade, Nota separados por vírgula: ").split(", ")
 
-def verificar(compra):
-    if compra in despensa:
-        print(f"Você já possui {compra} na despensa.")
-    else:
-        carrinho.append(compra)
-        print("Compra adicionada ao seu carrinho")
-
-def estocar(carrinho):
-    if carrinho:
-        for item in carrinho:
-            despensa.append(item)
-            return despensa
-    else:
-        return despensa
-    
-
-compra = input("Digite o item que você quer verificar: ")
-verificar(compra)
-print(f"Sua despensa atual possui: {estocar(carrinho)}")
+for i in range(0, len(dados), 3):
+    nome, idade, nota = dados[i], int(dados[i + 1]), float(dados[i + 2])
+    print(f"Aluno: {nome}")
+    print(f"Idade: {idade}")
+    print(f"Nota: {nota}\n")
